@@ -5,11 +5,12 @@ syntax enable
 set encoding=utf-8
 set tabstop=4
 set softtabstop=4
+set shiftwidth=4
 set expandtab
 set number
 set showcmd
 set cursorline
-filetype indent on
+filetype indent plugin on
 set wildmenu
 set lazyredraw
 set showmatch
@@ -23,6 +24,7 @@ set foldnestmax=10
 set foldmethod=indent
 nnoremap j gj
 nnoremap k gk
+" highlight last inserted text
 nnoremap gV `[v`]
 nnoremap <leader>u :GundoToggle<CR>
 " allows cursor change in tmux mode
