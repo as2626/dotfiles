@@ -1,20 +1,4 @@
-export PATH="$HOME/Library/Python/2.7/bin:${PATH}"
-# added by Anaconda3 2019.03 installer
-# >>> conda init >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$(CONDA_REPORT_ERRORS=false '/anaconda3/bin/conda' shell.bash hook 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    \eval "$__conda_setup"
-else
-    if [ -f "/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/anaconda3/etc/profile.d/conda.sh"
-        CONDA_CHANGEPS1=false conda activate base
-    else
-        \export PATH="/anaconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda init <<<
+# export PATH="$HOME/Library/Python/2.7/bin:${PATH}"
 
 # opam configuration
 # test -r /Users/abhay/.opam/opam-init/init.sh && . /Users/abhay/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true
@@ -116,6 +100,8 @@ else
   export EDITOR='vim'
 fi
 
+zstyle ':completion:*:ssh:*' hosts off
+
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
@@ -147,3 +133,4 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
+
