@@ -17,7 +17,7 @@ unset __conda_setup
 # <<< conda init <<<
 
 # opam configuration
-test -r /Users/abhay/.opam/opam-init/init.sh && . /Users/abhay/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true
+# test -r /Users/abhay/.opam/opam-init/init.sh && . /Users/abhay/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true
 
 bindkey -v
 
@@ -25,7 +25,7 @@ bindkey -v
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/abhay/.oh-my-zsh"
+export ZSH="/home/as2626/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -127,8 +127,23 @@ fi
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias dotfiles='/usr/local/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias update="source ~/.zshrc"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/share/apps/anaconda3/5.2.0/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/share/apps/anaconda3/5.2.0/etc/profile.d/conda.sh" ]; then
+        . "/share/apps/anaconda3/5.2.0/etc/profile.d/conda.sh"
+    else
+        export PATH="/share/apps/anaconda3/5.2.0/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
