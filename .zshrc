@@ -1,7 +1,7 @@
 # export PATH="$HOME/Library/Python/2.7/bin:${PATH}"
 
 # opam configuration
-test -r /Users/abhay/.opam/opam-init/init.sh && . /Users/abhay/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true
+test -r $HOME/.opam/opam-init/init.sh && . $HOME/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true
 
 bindkey -v
 
@@ -9,7 +9,7 @@ bindkey -v
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/abhay/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -77,7 +77,6 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git
-         web-search
          vi-mode
          extract
          tmux
