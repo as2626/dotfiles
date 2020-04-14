@@ -112,8 +112,19 @@ zstyle ':completion:*:ssh:*' hosts off
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# https://www.anand-iyer.com/blog/2018/a-simpler-way-to-manage-your-dotfiles.html
 alias dotfiles='/usr/local/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-alias update="source ~/.zshrc"
+
+journal() {
+    cd $HOME/Documents/text/journal
+    if [[ $@ == "new" ]]; then
+        command vim new.jrnl
+    else
+        today=`date +%Y-%b-%d`
+        command vim $today.jrnl
+    fi
+    }
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
