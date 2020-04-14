@@ -69,6 +69,7 @@ augroup journaling
     autocmd!
     autocmd BufNewFile new.jrnl execute 'file' fnameescape(strftime("%Y-%b-%d.jrnl"))
     autocmd BufNewFile *.jrnl 0r $HOME/Documents/text/journal/templates/fiveminjournal.txt
+    autocmd BufNewFile,BufReadPre *.jrnl set spell spelllang=en_us
 augroup END
 " ## added by OPAM user-setup for vim / base ## 93ee63e278bdfc07d1139a748ed3fff2 ## you can edit, but keep this line
 let s:opam_share_dir = system("opam config var share")
