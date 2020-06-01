@@ -1,19 +1,24 @@
 set nocompatible  " vim, not vi
-" https://dougblack.io/words/a-good-vimrc.html
-colorscheme badwolf
-syntax enable
+colorscheme badwolf             " hot stuff boi
+syntax enable                   " syntax preprocessing
 set encoding=utf-8
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
-set expandtab
-set number
-set showcmd
-set cursorline
-set ruler
-filetype indent plugin on
-set wildmenu
-set lazyredraw   " don't redraw during macros
+
+" tab stuff
+set tabstop=2                   " visual spaces per tab
+set softtabstop=2               " number of spaces of tab in editing
+set shiftwidth=2
+set expandtab                   " expand tab to spaces
+set autoindent
+set smartindent
+
+set backspace=indent,eol,start  " allow backspace over everything
+set number                      " line numbers
+set showcmd                     " commands at bottom
+set cursorline                  " highlight current line
+set ruler                       " line and col number in bottom-right
+filetype indent plugin on       " file-specific settings
+set wildmenu                    " visual autocomplete for command menu
+set lazyredraw                  " don't redraw during macros
 
 let mapleader=","
 
@@ -31,14 +36,14 @@ set foldlevelstart=10
 set foldnestmax=10
 set foldmethod=indent
 
-" Update term title but restore old title after leaving Vim
-set title
-set titleold=
+" Make sure that unsaved buffers that are to be put in the background are
+" allowed to go in there (ie. the "must save first" error doesn't come up)
+set hidden
+
 " treat a wrap-around line as two lines
 nnoremap j gj
 nnoremap k gk
-" highlight last inserted text
-nnoremap gV `[v`]
+
 nnoremap <leader>u :GundoToggle<CR>
 " black hole register delete
 nnoremap <leader>d "_d
