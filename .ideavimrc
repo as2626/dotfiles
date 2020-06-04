@@ -1,0 +1,5 @@
+source ~/.vimrc
+
+set ideajoin
+set commentary
+set surround
